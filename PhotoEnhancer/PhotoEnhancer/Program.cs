@@ -80,8 +80,8 @@ namespace PhotoEnhancer
             mainForm.AddFilter(new TransformFilter(
                 "4 изображения",
                 size => size,
-                (point, size) => new Point(Math.Min(point.X * 2 - (point.X / (size.Width / 2)) * (size.Width),size.Width-1),
-                Math.Min(point.Y * 2 - (point.Y / (size.Height / 2) * (size.Height)), size.Height-1))
+                (point, size) => new Point(point.X * 2 - (point.X / (size.Width / 2)) * (size.Width),
+                point.Y * 2 - (point.Y / (size.Height / 2) * (size.Height)))
                 ));
 
             mainForm.AddFilter(new TransformFilter<RotationParameters>(
