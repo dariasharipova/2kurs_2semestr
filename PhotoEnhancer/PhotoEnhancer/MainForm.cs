@@ -95,6 +95,18 @@ namespace PhotoEnhancer
                     parameters[i] = (double)numericUpDowns[i].Value;
 
                 resultPhoto = filter.Process(originalPhoto, parameters);
+                resultPictureBox.Height = resultPhoto.Height;
+                resultPictureBox.Width = resultPhoto.Width;
+                if(resultPhoto.Width > originalPhoto.Width)
+                {
+                    MainForm.ActiveForm.Height = 750 + resultPictureBox.Height - originalPhoto.Height;
+                    MainForm.ActiveForm.Width = 850 + resultPictureBox.Width - originalPhoto.Width;
+                }
+                else
+                {
+                    MainForm.ActiveForm.Height = 750;
+                    MainForm.ActiveForm.Width = 850;
+                }
                 resultPictureBox.Image = Convertors.PhotoToBitmap(resultPhoto);
             }
         }

@@ -87,6 +87,9 @@ namespace PhotoEnhancer
             mainForm.AddFilter(new TransformFilter<RotationParameters>(
                 "Поворот на произвольный угол", new RotationTransformer()));
 
+            mainForm.AddFilter(new TransformFilter<ZoomParameters>(
+                "Масштабирование", new ZoomTransformer()));
+
             Application.Run(mainForm);
         }
     }
